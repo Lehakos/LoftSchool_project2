@@ -1,0 +1,18 @@
+//- сюда добавляем название файлов js, которые хотим подключить к проекту
+//- при конкатенации порядок будет сохранен
+-
+    var scripts = [
+        'scripts'
+    ];
+
+
+// build:js js/vendor.min.js
+// bower:js
+// endbower
+// endbuild
+
+// build:js js/scripts.min.js
+each src in scripts
+    script(src='../app/js/' + src + '.js')
+// endbuild
+

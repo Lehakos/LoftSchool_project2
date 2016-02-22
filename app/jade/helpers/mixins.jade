@@ -1,0 +1,8 @@
+mixin delimiter(blockName)
+    if blockName
+        = '\n'
+        = '\n'
+        != '<!--' + '~~~~~~~~~~~~~~~ ' + blockName.toUpperCase() + ' end ~~~~~~~~~~~~~~~~~' + '-->'
+        = '\n'
+    else
+        = '\n'
