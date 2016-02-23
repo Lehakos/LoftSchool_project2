@@ -1,0 +1,97 @@
+$socials: (
+    vk: (
+        base: $vk,
+        hover: $vk-hover,
+        big: $vk-big,
+        bigHover: $vk-big-hover
+    ),
+    fb: (
+        base: $fb,
+        hover: $fb-hover,
+        big: $fb-big,
+        bigHover: $fb-big-hover
+    ),
+    tw: (
+        base: $tw,
+        hover: $tw-hover,
+        big: $tw-big,
+        bigHover: $tw-big-hover
+    )
+);
+
+.socials {
+    padding: 0;
+    margin: 0;
+
+    font-size: 0;
+    list-style: none;
+
+    &_big-icons {
+
+        .socials__link {
+            width: 43px;
+            height: 43px;
+
+            background-color: #fff;
+
+            @each $key, $value in $socials {
+
+                &_#{$key} {
+
+                    &::before {
+                        @include sprite(map-get($value, big));
+                    }
+
+                    &:hover {
+                        &::before {
+                            @include sprite(map-get($value, bigHover));
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__item {
+        display: inline-block;
+
+        vertical-align: middle;
+
+        &:not(:last-child) {
+            margin-right: 16px;
+        }
+    }
+
+    &__link {
+        position: relative;
+
+        display: block;
+        width: 26px;
+        height: 26px;
+
+        border-radius: 50%;
+        background-color: #333;
+
+        &::before {
+            content: '';
+            @include middle();
+        }
+
+        @each $key, $value in $socials {
+
+            &_#{$key} {
+
+                &::before {
+                    @include sprite(map-get($value, base));
+                }
+
+                &:hover {
+                    &::before {
+                        @include sprite(map-get($value, hover));
+                    }
+                }
+            }
+        }
+    }
+}
+

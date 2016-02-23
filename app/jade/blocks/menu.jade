@@ -1,0 +1,15 @@
+mixin menu(items, active)
+
+    +b.UL.menu(class!=attributes.menu)
+
+        each item, ind in items
+
+            if ind === active
+
+                +e.LI.item_active(class!=attributes.item)
+                    +e.SPAN.link= item
+
+            else
+
+                +e.LI.item(class!=attributes.item)
+                    +e.link(href=jv0)= item

@@ -1,0 +1,16 @@
+nav.page__breadcrumbs
+
+    h2.hidden-text Навигационная цепочка
+
+    .container
+
+        +b('ul').breadcrumbs
+
+            +e.LI.item
+                +e.link(href=jv0) Главная
+
+            +e.LI.item
+                +e.link(href=jv0) Внутренняя
+
+            +e.LI.item_active
+                +e.SPAN.link Каталог

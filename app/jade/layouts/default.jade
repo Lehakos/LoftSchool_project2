@@ -1,11 +1,23 @@
 include ../../../node_modules/bemto.jade/bemto
 include ../helpers/mixins
+include ../helpers/variables
 
 doctype html
 html(lang='ru')
     include ../partials/head
 
     body
-        block content
+
+        .page
+
+            .page__wrapper
+
+                include ../partials/header
+                include ../partials/nav
+                include ../partials/breadcrumbs
+
+                main.main
+
+                    block content
 
         include ../partials/scripts

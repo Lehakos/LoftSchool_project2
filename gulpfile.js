@@ -56,9 +56,6 @@ gulp.task('sprite', function () {
         imgPath: '../i/sprite.png',
         cssName: '_sprite.scss',
         cssFormat: 'scss',
-        cssVarMap: function(sprite) {
-            sprite.name = 's-' + sprite.name
-        },
         cssTemplate: 'handlebarsInheritance.scss.handlebars'
     }));
 

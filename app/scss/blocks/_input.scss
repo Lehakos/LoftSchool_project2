@@ -1,0 +1,18 @@
+.input {
+    display: block;
+    width: 100%;
+    padding-left: 18px;
+    padding-right: 18px;
+    border: 1px solid #dee1e4;
+
+    font-weight: 300;
+    font-size: 14px;
+
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 2px;
+
+    &::placeholder {
+        color: #7f7f7f;
+        opacity: 1;
+    }
+}

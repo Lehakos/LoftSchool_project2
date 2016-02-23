@@ -1,7 +1,9 @@
-@import 'helpers/normalize';
 @import 'helpers/variables';
 @import 'helpers/mixins';
 @import 'helpers/sprite';
-@import 'helpers/fonts';
-@import 'all/*';
+@import 'all/fonts';
+@import 'all/base';
+@import 'all/helper-blocks';
+@import 'blocks/**/*'
+@import 'partials/**/*'
 

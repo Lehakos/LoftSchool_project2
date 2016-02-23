@@ -1,23 +1,24 @@
 {
-    "name": "digitalwand",
-    "description": "",
-    "main": "gulpfile.js",
-    "authors": [
-        "LehaKos <lehakos@gmail.com>"
-    ],
-    "license": "ISC",
-    "moduleType": [],
-    "homepage": "",
-    "ignore": [
-        "**/.*",
-        "node_modules",
-        "bower_components",
-        "app/bower",
-        "test",
-        "tests"
-    ],
-    "dependencies": {
-    "jquery": "~2.2.0"
-    },
-    "overrides": {}
+  "name": "digitalwand",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "LehaKos <lehakos@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.2.0",
+    "normalize-css": "^3.0.3"
+  },
+  "overrides": {}
 }

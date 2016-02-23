@@ -1,0 +1,58 @@
+include ../blocks/socials
+include ../blocks/menu
+
++b.HEADER.header
+
+    +e.top
+
+        .container
+
+            .columns.columns_justify.columns_middle
+
+                .columns__col
+
+                    +socials({
+                        'fb': 'facebook.com',
+                        'vk': 'vk.com',
+                        'tw': 'tw.com'
+                    })(socials='header__socials')
+
+                .columns__col
+
+                    +e.ADDRESS.contacts
+
+                        +e.contacts-item_address
+                            | ул. Маяковская 6, офис 17
+
+                        +e.contacts-item_phone(href='tel:+79211231213')
+                            | +7 (921) 123-12-13
+
+    +e.bottom
+
+        .container
+
+            .columns.columns_justify.columns_middle
+
+                .columns__col
+
+                    +b.logo(href=jv0)
+                        +e.IMG.img(src='i/logo.svg' width=237 height=35 alt='Cooltech')
+                        h1.hidden-text Cooltech - онлайн магазин электротехники
+
+                .columns__col
+
+                    +b.FORM.search.header__search(name='search' method='get' action='')
+
+                        +e.INPUT.input.input(name='search' type='search' placeholder='Что будем искать')
+                        +e.BUTTON.btn.btn(type='submit') Найти
+
+                .columns__col
+
+                    +e.NAV.nav
+
+                        h2.hidden-text Пользовательская навигация
+                        +menu(['Карта проезда', 'История заказов', 'Корзина'], -1)(nav='header__menu')
+
+
+
+

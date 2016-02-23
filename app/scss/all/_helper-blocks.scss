@@ -1,0 +1,48 @@
+.hidden-text {
+    position: absolute;
+    clip: rect(0 0 0 0); /* for Internet Explorer */
+    clip: rect(0, 0, 0, 0);
+
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    margin: -1px;
+    border: 0;
+
+    overflow: hidden;
+}
+
+.container {
+    width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.columns {
+    font-size: 0;
+
+    &_justify {
+        text-align: justify;
+        text-justify: newspaper;
+
+        &::after {
+            content: '';
+            display: inline-block;
+            width: 100%;
+        }
+    }
+
+    &_middle {
+        .columns__col {
+            vertical-align: middle;
+        }
+    }
+
+    &__col {
+        display: inline-block;
+
+        font-size: 1rem;
+        vertical-align: top;
+    }
+
+}

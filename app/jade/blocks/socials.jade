@@ -1,0 +1,9 @@
+mixin socials(items)
+
+    +b.UL.socials(class!=attributes.socials)
+
+        each value, key in items
+
+            +e.LI.item(class!=attributes.item)
+
+                +e.link(href=jv0 class='_#{key}')= value

@@ -1,7 +1,20 @@
-body {
-    width: 100%;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-.sprite {
-    @include sprite($s-lunch)
+html,
+body {
+    width: 100%;
+    height: 100%;
 }
+
+body {
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+    color: $textColor;
+}
+
+
