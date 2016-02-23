@@ -8,6 +8,10 @@
 
     &__input {
         height: 34px;
+
+        &[type="search"] {
+            box-sizing: border-box;
+        }
     }
 
     &__btn {

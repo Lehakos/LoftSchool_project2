@@ -2,8 +2,12 @@ mixin customInput(mod, type, id, name, val, checked)
 
     .custom-input(class='custom-input_#{mod}')
         input.custom-input__hidden(id=id name=name type=type value=val checked=checked)
-        label.custom-input__label(for=id class!=attributes.label style!=('background-color: ' + attributes.color))
-            block
+
+        if mod.indexOf('color') !== -1
+            label.custom-input__label(for=id class!=attributes.label style!=('background-color: ' + attributes.color))
+        else
+            label.custom-input__label(for=id class!=attributes.label)
+                block
 
 mixin inputsGroup(input, data)
 
