@@ -1,0 +1,51 @@
+.filter {
+    background-color: rgba(255, 255, 255, .6);
+    border: 1px solid #dee1e4;
+    border-radius: 5px;
+
+    &__type {
+        padding: 0;
+        border: none;
+        margin: 0;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid #dee1e4;
+        }
+    }
+
+    &__input {
+        &:not(:last-child) {
+            margin-bottom: 25px;
+        }
+    }
+
+    &__reset {
+        color: #5db2fc;
+        font-size: 14px;
+        text-decoration: underline;
+
+        transition: color .4s ease;
+
+        &:hover {
+            color: adjust-color(#5db2fc, $lightness: +10%);
+        }
+    }
+
+    &__price-label {
+        display: inline-block;
+        margin-right: 10px;
+
+        vertical-align: middle;
+    }
+
+    &__price-input {
+        display: inline-block;
+        width: 80px;
+
+        vertical-align: middle;
+    }
+
+    &__colors-wrapper {
+        margin-bottom: -22px;
+    }
+}

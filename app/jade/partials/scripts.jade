@@ -2,12 +2,18 @@
 //- при конкатенации порядок будет сохранен
 -
     var scripts = [
+        'form-module',
+        'app-module',
         'scripts'
     ];
 
 
 // build:js js/vendor.min.js
 // bower:js
+script(src='../bower_components/jquery/dist/jquery.js')
+script(src='../bower_components/wnumb/wnumb.js')
+script(src='../bower_components/nouislider/distribute/nouislider.js')
+script(src='../bower_components/jquery-details/jquery.details.js')
 // endbower
 // endbuild
 

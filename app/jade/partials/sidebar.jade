@@ -1,0 +1,103 @@
+include ../blocks/custom-input
+
++b.ASIDE.sidebar
+
+    +b.FORM.filter(name='filter' method='post' action='')
+
+        +e.FIELDSET.type
+
+            +b.DETAILS.accordeon
+
+                +e.SUMMARY.heading Наличие в магазинах
+
+                +e.content
+
+                    +inputsGroup({
+                        mod: 'radio filter__input',
+                        type: 'radio',
+                        id: 'filter-availability',
+                        name: 'availability'
+                    }, ['Во всех магазинах', 'В ближайшем ко мне магазине'])
+
+        +e.FIELDSET.type
+
+            +b.DETAILS.accordeon
+
+                +e.SUMMARY.heading Бренды
+
+                +e.content
+
+                    +inputsGroup({
+                        mod: 'checkbox filter__input',
+                        type: 'checkbox',
+                        id: 'filter-brands',
+                        name: 'brands'
+                    }, ['Lenovo', 'Apple', 'Samsung', 'ASUS', 'Motorola'])
+
+                    a.filter__reset(href=jv0) Сбросить фильтр
+
+        +e.FIELDSET.type
+
+            +b.DETAILS.accordeon
+
+                +e.SUMMARY.heading Цена
+
+                +e.content
+
+                    +b.range-slider_inputs(data-min=0 data-max=25000 data-step=100)
+
+                        +e.inputs-wrapper
+
+                            .columns.columns_justify.columns_middle
+
+                                .columns__col
+
+                                    label.filter__price-label от
+                                    .filter__price-input
+                                        +e.INPUT.input_min.input_number(name='price-min' type='number')
+
+                                .columns__col
+
+                                    label.filter__price-label до
+                                    .filter__price-input
+                                        +e.INPUT.input_max.input_number(name='price-max' type='number')
+
+                        +e.widget
+
+        +e.FIELDSET.type
+
+            +b.DETAILS.accordeon
+
+                +e.SUMMARY.heading Цвет
+
+                +e.content
+
+                    .filter__colors-wrapper
+
+                        +colorInputs({
+                            id: 'filter-color',
+                            name: 'color',
+                            colors: ['#fff', '#cdcdcd', '#000', '#002d53', '#f10', '#fff323', '#ff9243', '#78c479',
+                                    '#00a8ff', '#a671b1', '#f879b0', '#913e13']
+                        })
+
+        +e.FIELDSET.type
+
+            +b.DETAILS.accordeon
+
+                +e.SUMMARY.heading Операционные системы
+
+                +e.content
+
+                    +inputsGroup({
+                        mod: 'checkbox filter__input',
+                        type: 'checkbox',
+                        id: 'filter-os',
+                        name: 'os'
+                    }, ['Android', 'iOS', 'Windows Mobile', 'Symbian', 'Custom'])
+
+                    a.filter__reset(href=jv0) Сбросить фильтр
+
+
+
+

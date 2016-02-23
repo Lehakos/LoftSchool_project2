@@ -15,4 +15,19 @@
         color: #7f7f7f;
         opacity: 1;
     }
+
+    &_number {
+        padding-left: 10px;
+        padding-right: 10px;
+
+        appearance: textfield;
+
+        &::-webkit-inner-spin-button {
+            display: none;
+        }
+
+        &::inner-spin-button {
+            display: none;
+        }
+    }
 }

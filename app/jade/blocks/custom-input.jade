@@ -1,0 +1,29 @@
+mixin customInput(mod, type, id, name, val, checked)
+
+    .custom-input(class='custom-input_#{mod}')
+        input.custom-input__hidden(id=id name=name type=type value=val checked=checked)
+        label.custom-input__label(for=id class!=attributes.label style!=('background-color: ' + attributes.color))
+            block
+
+mixin inputsGroup(input, data)
+
+    - var checked;
+
+    each text, ind in data
+
+        - checked = (ind === 0 ? true : false)
+
+        +customInput(input.mod, input.type, input.id + '-' +ind, input.name, ind, checked)
+            | #{text}
+
+mixin colorInputs(data)
+
+    - var checked;
+
+    each color, ind in data.colors
+
+        - checked = (ind === 0 ? true : false)
+
+        +customInput('color', 'checkbox', data.id + '-' +ind, data.name, color, checked)(color=color)
+
+

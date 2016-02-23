@@ -1,0 +1,17 @@
+.main {
+    &__columns {
+        @include clearfix();
+        padding-bottom: 124px;
+    }
+
+    &__sidebar-col {
+        float: left;
+        width: 333px;
+        padding-top: 101px;
+    }
+
+    &__catalog-col {
+        float: right;
+        width: 743px;
+    }
+}

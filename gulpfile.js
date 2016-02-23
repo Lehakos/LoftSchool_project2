@@ -98,9 +98,11 @@ gulp.task('jade', function() {
 // Подключает bower файлы к html файлам
 gulp.task('wiredep', function() {
 
-    return gulp.src('dist/*.html')
-        .pipe(wiredep())
-        .pipe(gulp.dest('dist'));
+    return gulp.src(paths.jade + '**/*.jade')
+        .pipe(wiredep({
+            ignorePath: '../../'
+        }))
+        .pipe(gulp.dest(paths.jade));
 
 });
 
@@ -151,7 +153,8 @@ gulp.task('server', function () {
         server: {
             baseDir: 'dist',
             routes: {
-                "/app": "app"
+                "/app": "app",
+                "/bower_components": "bower_components"
             }
         }
     });
@@ -197,9 +200,9 @@ gulp.task('watch', function() {
 // Сборка на продакшн
 gulp.task('build', ['clean'], function() {
     runSequence(
+        'wiredep',
         'jade',
         'sprite',
-        'wiredep',
         'copy',
         'sass',
         'useref'
@@ -209,9 +212,9 @@ gulp.task('build', ['clean'], function() {
 // Задача по умолчанию
 gulp.task('default', ['clean'], function() {
     runSequence(
+        'wiredep',
         'jade',
         'sprite',
-        'wiredep',
         'copy',
         'sass',
         'server',

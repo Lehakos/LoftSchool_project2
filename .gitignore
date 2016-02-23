@@ -38,6 +38,7 @@ Thumbs.db
 .idea
 .svn
 app/bower
+bower_components
 
 # Node.JS
 node_modules
