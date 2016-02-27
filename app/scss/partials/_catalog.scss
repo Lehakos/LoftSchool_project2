@@ -1,0 +1,107 @@
+.catalog {
+
+    &__categories {
+        margin-bottom: 40px;
+    }
+
+    &__menu {
+        padding-left: 20px;
+        border: 1px solid #dee1e4;
+        margin-bottom: 20px;
+
+        background-color: rgba(217, 229, 234, .6);
+        border-radius: 5px;
+    }
+
+    &__sort-label {
+        margin-right: 4px;
+    }
+
+    &__select {
+        width: 145px;
+    }
+
+    &__view-label {
+        margin-right: 15px;
+    }
+
+    &__view-list {
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+
+        font-size: 0;
+        vertical-align: middle;
+
+        list-style: none;
+    }
+
+    &__view-item {
+        display: inline-block;
+
+        font-size: 1rem;
+    }
+
+    &__view-switch {
+        position: relative;
+
+        display: block;
+        width: 50px;
+        height: 50px;
+        border-left: 1px solid #dee1e4;
+
+        text-indent: 100%;
+        white-space: nowrap;
+        color: inherit;
+        text-decoration: none;
+
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            @include middle('margin');
+
+            opacity: .5;
+
+            transition: opacity .3s ease;
+        }
+
+        &:not(.catalog__view-switch_active):hover {
+            &::before {
+                opacity: .75;
+            }
+        }
+
+        &_list {
+            &::before {
+                @include sprite($view-list);
+            }
+        }
+
+        &_block {
+            &::before {
+                @include sprite($view-block);
+            }
+        }
+
+        &_table {
+            &::before {
+                @include sprite($view-table);
+            }
+        }
+
+        &_active {
+            &::before {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__goods-wrapper {
+        margin-bottom: 65px;
+    }
+
+    &__pagination {
+        text-align: right;
+    }
+}

@@ -21,7 +21,8 @@
     "normalize-css": "^3.0.3",
     "nouislider": "^8.3.0",
     "wnumb": "^1.0.2",
-    "jquery-details": "^0.1.0"
+    "jquery-details": "^0.1.0",
+    "jquery-form-styler": "jquery.formstyler#^1.7.4"
   },
   "overrides": {
     "nouislider": {
@@ -30,9 +31,9 @@
       }
     },
     "jquery-details": {
-        "main": [
-            "jquery.details.js"
-        ]
+      "main": [
+        "jquery.details.js"
+      ]
     }
   }
 }

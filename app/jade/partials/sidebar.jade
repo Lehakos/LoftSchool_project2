@@ -2,7 +2,16 @@ include ../blocks/custom-input
 
 +b.ASIDE.sidebar
 
-    +b.FORM.filter(name='filter' method='post' action='')
+    +b.UL.categories.catalog__categories
+
+        - var categories = ['Флагманы', 'Бюджетная линейка'];
+
+        each item in categories
+
+            +e.LI.item(class=(item === 'Бюджетная линейка' ? 'categories__item_active' : ''))
+                +e.link(href=jv0)= item
+
+    +b.FORM.filter.catalog__filter(name='filter' method='post' action='')
 
         +e.FIELDSET.type
 

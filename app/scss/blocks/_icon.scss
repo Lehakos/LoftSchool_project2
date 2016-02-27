@@ -1,0 +1,12 @@
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+
+    fill: currentColor;
+
+    &_rub {
+        width: .75em;
+        height: .75em;
+    }
+}

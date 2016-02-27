@@ -1,0 +1,33 @@
+.categories {
+    padding: 0;
+    border: 1px solid #dee1e4;
+    margin: 0;
+
+    list-style: none;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+
+    &__item {
+        color: #7f7f7f;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid #dee1e4;
+        }
+
+        &_active {
+            color: #5d656c;
+
+            background-color: #d9e5ea;
+            cursor: default;
+        }
+    }
+
+    &__link {
+        display: block;
+        padding: 15px 30px;
+
+        font-size: 14px;
+        color: inherit;
+        text-decoration: none;
+    }
+}

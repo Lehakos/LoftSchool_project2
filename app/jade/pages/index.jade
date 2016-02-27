@@ -9,13 +9,142 @@ block content
 
         +b.H2.title Мобильные телефоны
 
-        .main__columns
+        +b.catalog
 
-            .main__sidebar-col
-                include ../partials/sidebar
+            .main__columns
 
-            .main__catalog-col
+                .main__sidebar-col
+                    include ../partials/sidebar
 
+                .main__content-col
+
+                    +e.menu
+
+                        .columns.columns_justify.columns_middle
+
+                            +e.sort.columns__col
+                                +e.LABEL.sort-label.label Сортировать по
+
+                                +e.SELECT.select.select(name='sort')
+                                    option(value='price') по цене
+                                    option(value='raiting') по рейтингу
+
+                            +e.view.columns__col
+                                +e.LABEL.view-label.label Вид каталога
+
+                                +e.UL.view-list
+
+                                    +e.LI.view-item
+                                        +e.view-switch_list(href=jv0)
+                                            | Списком
+
+                                    +e.LI.view-item
+                                        +e.view-switch_block._active(href=jv0)
+                                            | Плиткой
+
+                                    +e.LI.view-item
+                                        +e.view-switch_table(href=jv0)
+                                            | Таблицей
+
+                    +e.goods-wrapper
+
+                        +b.goods
+
+                            +e.UL.list
+
+                                - for (var i = 0; i < 9; i++)
+
+                                    +e.LI.item
+
+                                        +e.inner
+
+                                            +e.additional
+
+                                                +b.gallery.goods__gallery
+
+                                                    +e.display.goods__gallery-display
+
+                                                        +e.IMG.img(src='http://lorempixel.com/200/200/technics/1' alt='Фотография товара')
+
+                                                    +e.UL.thumbnails.goods__gallery-thumbnails
+
+                                                        - for (var k = 1; k <= 3; k++)
+
+                                                            +e.LI.item.goods__gallery-item
+
+                                                                +e.switch.goods__gallery-switch(class=(k === 1 ? 'gallery__switch_active' : '') href=jv0 data-src=('http://lorempixel.com/200/200/technics/' + k))
+
+                                                                    +e.IMG.img(src=('http://lorempixel.com/50/50/technics/' + k) alt='Фотография товара')
+
+                                                +e.vendor-code
+                                                    | Артикул #{' '}
+
+                                                    +e.SPAN.vendor-code-num 189238
+
+                                            +e.main
+
+                                                +e.H3.name Samsung GT-I9301I GALAXY S 3
+
+                                                +e.UL.properties
+
+                                                    -
+                                                        var properties = {
+                                                            'Тип SIM-карты': 'Micro-SIM',
+                                                            'Количество SIM-карт': '1',
+                                                            'Цвет': 'Белый',
+                                                            'ОC': 'Android',
+                                                            'Связь 3G': 'Есть',
+                                                            '4G (LTE)': 'Нет',
+                                                            'GPS-модуль': 'Есть'
+                                                        };
+
+                                                    each val, key in properties
+
+                                                        +e.LI.properties-item
+                                                            +e.SPAN.properties-name= key
+                                                            | #{' '}
+                                                            +e.SPAN.properties-val= val
+
+                                                +b.rating_amount_4.goods__rating
+
+                                                    +e.stars
+
+                                                        +e.SPAN.item
+                                                        +e.SPAN.item
+                                                        +e.SPAN.item
+                                                        +e.SPAN.item
+                                                        +e.SPAN.item
+
+                                                    +e.amount 4
+
+                                            +e.order
+
+                                                +e.price 11&nbsp;290
+                                                    +b.SVG.icon_rub
+                                                        use(xlink:href="#icon-rub")
+
+                                                +e.order-bottom
+
+                                                    +e.btn.btn(href=jv0) В корзину
+
+                                                    +e.availability_true
+                                                        | В наличии
+
+                    +b.UL.pagination.catalog__pagination
+
+                        - var pagination = ['<', 1, 2, 3, '>'];
+
+                        each link, ind in pagination
+
+                            if ind === 2
+
+                                +e.LI.item_active
+                                    +e.SPAN.link= link
+
+                            else
+
+                                +e.LI.item
+                                    +e.link(href=jv0)= link
 
 
 

@@ -52,6 +52,10 @@
             transition: opacity .4s ease, transform .4s ease;
         }
 
+        &::selection {
+            background-color: transparent;
+        }
+
         &:hover {
             background-color: #d9e5ea;
 
@@ -59,6 +63,11 @@
                 opacity: 1;
             }
         }
+
+        &:focus {
+            outline: none;
+        }
+
     }
 
     &__content {

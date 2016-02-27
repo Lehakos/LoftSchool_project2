@@ -85,7 +85,9 @@
         left: 50%;
 
         transform: translate(-50%, -50%);
+
     } @else if $type == 'margin' {
+
         top: 0;
         right: 0;
         bottom: 0;
