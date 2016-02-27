@@ -15,11 +15,12 @@
         position: relative;
 
         display: inline-block;
+        margin-left: 20px;
 
         vertical-align: middle;
 
         &:not(:last-child) {
-            margin-right: 105px;
+            margin-right: 85px;
         }
 
         &::before {

@@ -26,7 +26,8 @@ var
     sourcemaps = require('gulp-sourcemaps'),
     lazypipe = require('lazypipe'),
     spritesmith = require('gulp.spritesmith'),
-    merge = require('merge-stream');
+    merge = require('merge-stream'),
+    browserify = require('gulp-browserify');
 
 //===============================================
 // ПУТИ
@@ -95,6 +96,15 @@ gulp.task('jade', function() {
 
 });
 
+gulp.task('scripts', function() {
+    return gulp.src(paths.scriptsDev + 'entry.js')
+        .pipe(browserify({
+            debug : true
+        }))
+        .pipe(rename('scripts.js'))
+        .pipe(gulp.dest(paths.scriptsDist));
+});
+
 // Подключает bower файлы к html файлам
 gulp.task('wiredep', function() {
 
@@ -110,22 +120,10 @@ gulp.task('wiredep', function() {
 gulp.task('useref', function () {
 
     return gulp.src('dist/*.html')
-        .pipe(useref({}, lazypipe().pipe(sourcemaps.init, { loadMaps: true })))
+        .pipe(useref({}))
         .pipe(cache('useref'))
-        .pipe(gulpif('*.js', pipe(
-            // убирает суффикс .min и сохраняет не минифицированную версию
-            rename(function (path) {
-                path.basename = path.basename.slice(0, path.basename.length - 4);
-            }),
-            gulp.dest('dist'),
-            uglify(),
-            rename({suffix: '.min'}), // снова добавляет суффикс .min
-            sourcemaps.write()
-        )))
-        .pipe(gulpif('*.css', pipe(
-            minifyCss(),
-            sourcemaps.write()
-        )))
+        .pipe(gulpif('*.js', uglify()))
+        .pipe(gulpif('*.css', minifyCss()))
         .pipe(gulp.dest('dist'));
 
 });
@@ -173,7 +171,9 @@ gulp.task('watch', function() {
         runSequence('jade', browserSync.reload);
     });
 
-    watch(paths.scriptsDev + '**/*.js', browserSync.reload);
+    watch(paths.scriptsDev + '**/*.js', function() {
+        runSequence('scripts', browserSync.reload);
+    });
 
     watch('app/resourses/**/*', function(event) {
 
@@ -205,6 +205,7 @@ gulp.task('build', ['clean'], function() {
         'sprite',
         'copy',
         'sass',
+        'scripts',
         'useref'
     );
 });
@@ -217,6 +218,7 @@ gulp.task('default', ['clean'], function() {
         'sprite',
         'copy',
         'sass',
+        'scripts',
         'server',
         'watch'
     )
