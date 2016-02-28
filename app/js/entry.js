@@ -5,7 +5,7 @@ $(function() {
     var filterModule       = require('./modules/filter.js');
     var galleryModule      = require('./modules/gallery.js');
     var catalogModule      = require('./modules/catalog.js');
-    var selectModule      = require('./modules/select.js');
+    var selectModule       = require('./modules/select.js');
     var columnsModule      = require('./modules/columns.js');
 
     rangeSlidersModule.init();

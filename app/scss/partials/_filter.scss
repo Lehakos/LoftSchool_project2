@@ -13,13 +13,10 @@
         }
     }
 
-    &__input {
-        &:not(:last-child) {
-            margin-bottom: 25px;
-        }
-    }
-
     &__reset {
+        display: inline-block;
+        margin-top: 10px;
+
         color: #5db2fc;
         font-size: 14px;
         text-decoration: underline;

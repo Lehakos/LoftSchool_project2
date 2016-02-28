@@ -13,12 +13,16 @@ mixin inputsGroup(input, data)
 
     - var checked;
 
-    each text, ind in data
+    +b.UL.inputs-group(class!=attributes.list)
 
-        - checked = (ind === 0 ? true : false)
+        each text, ind in data
 
-        +customInput(input.mod, input.type, input.id + '-' +ind, input.name, ind, checked)
-            | #{text}
+            +e.LI.item
+
+                - checked = (ind === 0 ? true : false)
+
+                +customInput(input.mod, input.type, input.id + '-' +ind, input.name, ind, checked)
+                    | #{text}
 
 mixin colorInputs(data)
 

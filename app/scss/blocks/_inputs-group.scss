@@ -1,0 +1,23 @@
+.inputs-group {
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+
+    &_radio {
+
+        .inputs-group__item {
+
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    &__item {
+
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+    }
+}

@@ -3,13 +3,21 @@
     &_view_list {
 
         .goods__list {
+            border: 1px solid #dee1e4;
             margin: 0;
+
+            border-radius: 5px;
+            background-color: #fff;
         }
 
         .goods__item {
             display: block;
             width: 100%;
             padding: 0;
+
+            &:not(:last-child) {
+                border-bottom: 1px solid #dee1e4;
+            }
         }
 
         .goods__inner {
