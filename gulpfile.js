@@ -166,7 +166,7 @@ gulp.task('clean', function() {
 
 gulp.task('minifyHtml', function() {
   return gulp.src('dist/*.html')
-    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(htmlmin())
     .pipe(gulp.dest('dist'))
 });
 
