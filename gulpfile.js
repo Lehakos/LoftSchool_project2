@@ -8,8 +8,9 @@ var
     sass = require('gulp-sass'),
     prefix = require('gulp-autoprefixer'),
     rename = require("gulp-rename"),
-    minifyCss = require('gulp-minify-css'),
     changed = require('gulp-changed'),
+    htmlmin = require('gulp-htmlmin'),
+    minifyCss = require('gulp-minify-css'),
     uglify = require('gulp-uglify'),
     runSequence = require('gulp-run-sequence'),
     del = require('del'),
@@ -163,6 +164,12 @@ gulp.task('clean', function() {
 
 });
 
+gulp.task('minifyHtml', function() {
+  return gulp.src('dist/*.html')
+    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(gulp.dest('dist'))
+});
+
 // Сервер
 gulp.task('server', function () {
     browserSync({
@@ -226,7 +233,8 @@ gulp.task('build', ['clean'], function() {
         'copy',
         'sass',
         'scripts',
-        'useref'
+        'useref',
+        'minifyHtml'
     );
 });
 
