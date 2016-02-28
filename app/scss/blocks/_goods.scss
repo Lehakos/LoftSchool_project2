@@ -13,9 +13,8 @@
         }
 
         .goods__inner {
-            display: table;
+            display: flex;
             width: 100%;
-            table-layout: fixed;
             padding: 20px;
             border: none;
 
@@ -30,7 +29,7 @@
         }
 
         .goods__additional {
-            display: table-cell;
+            flex-shrink: 0;
             width: 140px;
             margin-bottom: 0;
 
@@ -38,7 +37,7 @@
         }
 
         .goods__main {
-            display: table-cell;
+            flex-grow: 1;
             padding-left: 25px;
             padding-right: 30px;
             border-right: 1px solid #dee1e4;
@@ -49,9 +48,11 @@
         }
 
         .goods__order {
-            position: relative;
-
-            display: table-cell;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            align-content: space-between;
+            flex-shrink: 0;
             width: 130px;
             padding-left: 25px;
 
@@ -81,12 +82,6 @@
             &:nth-child(odd) {
                 background-color: transparent;
             }
-        }
-
-        .goods__order-bottom {
-            position: absolute;
-            bottom: 0;
-            right: 0;
         }
 
         .goods__btn {
@@ -123,33 +118,24 @@
         }
 
         .goods__inner {
-            display: table;
+            display: flex;
+            align-items: baseline;
             width: 100%;
             padding: 8px 12px;
             border: none;
 
             font-size: 0;
-            text-align: justify;
-            text-justify: newspaper;
 
             border-radius: 0;
             background-color: transparent;
-
-            &::after {
-                content: '';
-                display: inline-block;
-                width: 100%;
-            }
         }
 
         .goods__additional,
         .goods__main,
         .goods__order {
-            display: table-cell;
             margin-bottom: 0;
 
             font-size: 1rem;
-            vertical-align: baseline;
         }
 
         .goods__main {
@@ -158,6 +144,8 @@
         }
 
         .goods__order {
+            display: flex;
+            align-items: center;
             width: 320px;
 
             text-align: right;
@@ -387,4 +375,57 @@
     &__btn {
         float: right;
     }
+}
+
+.no-flexbox {
+
+    .goods {
+
+        &_view_list {
+
+            .goods__inner {
+                display: table;
+                table-layout: fixed;
+            }
+
+            .goods__additional {
+                display: table-cell;
+            }
+
+            .goods__main {
+                display: table-cell;
+            }
+
+            .goods__order {
+                position: relative;
+
+                display: table-cell;
+            }
+
+            .goods__order-bottom {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+
+        }
+
+        &_view_table {
+
+            .goods__inner {
+                display: table;
+            }
+
+            .goods__additional,
+            .goods__main,
+            .goods__order {
+                display: table-cell;
+
+                vertical-align: baseline;
+            }
+
+        }
+
+    }
+
 }

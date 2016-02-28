@@ -115,7 +115,8 @@ gulp.task('modernizr', function() {
             'setClasses'
         ],
         'tests': [
-            'csscolumns'
+            'csscolumns',
+            'flexbox'
         ],
         'uglify': true
     }))

@@ -40,7 +40,7 @@
 
         .menu__link {
             display: block;
-            padding: 19px 15px 15px;
+            padding: 17px 15px;
 
             font-weight: normal;
             text-decoration: none;
@@ -48,13 +48,10 @@
         }
     }
 
-    & * {
-        font-size: 16px;
-    }
-
     &__item {
         display: inline-block;
 
+        font-size: 1rem;
         font-weight: 600;
         vertical-align: top;
 
