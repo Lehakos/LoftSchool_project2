@@ -1,0 +1,19 @@
+.text-content {
+    column-count: 2;
+    column-gap: 40px;
+    page-break-inside: avoid;
+    break-inside: avoid;
+
+    text-align: justify;
+
+    p {
+        margin: 0;
+
+        font-size: 14px;
+        line-height: 20px;
+
+        + p {
+            margin-top: 20px;
+        }
+    }
+}

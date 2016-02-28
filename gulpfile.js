@@ -27,7 +27,8 @@ var
     lazypipe = require('lazypipe'),
     spritesmith = require('gulp.spritesmith'),
     merge = require('merge-stream'),
-    browserify = require('gulp-browserify');
+    browserify = require('gulp-browserify'),
+    modernizr = require('gulp-modernizr');
 
 //===============================================
 // ПУТИ
@@ -98,11 +99,28 @@ gulp.task('jade', function() {
 
 gulp.task('scripts', function() {
     return gulp.src(paths.scriptsDev + 'entry.js')
+        .pipe(plumber())
         .pipe(browserify({
             debug : true
         }))
         .pipe(rename('scripts.js'))
         .pipe(gulp.dest(paths.scriptsDist));
+});
+
+// Сборка файла modernizr
+gulp.task('modernizr', function() {
+  return gulp.src(paths.scriptsDev + '*.js')
+    .pipe(modernizr('modernizr.min.js', {
+        'options': [
+            'setClasses'
+        ],
+        'tests': [
+            'csscolumns'
+        ],
+        'uglify': true
+    }))
+    .pipe(uglify())
+    .pipe(gulp.dest(paths.scriptsDist));
 });
 
 // Подключает bower файлы к html файлам
@@ -201,6 +219,7 @@ gulp.task('watch', function() {
 gulp.task('build', ['clean'], function() {
     runSequence(
         'wiredep',
+        'modernizr',
         'jade',
         'sprite',
         'copy',
@@ -214,6 +233,7 @@ gulp.task('build', ['clean'], function() {
 gulp.task('default', ['clean'], function() {
     runSequence(
         'wiredep',
+        'modernizr',
         'jade',
         'sprite',
         'copy',

@@ -1,7 +1,8 @@
 .main {
+    padding-bottom: 30px;
+
     &__columns {
         @include clearfix();
-        padding-bottom: 124px;
     }
 
     &__sidebar-col {

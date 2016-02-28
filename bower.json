@@ -22,7 +22,8 @@
     "nouislider": "^8.3.0",
     "wnumb": "^1.0.2",
     "jquery-details": "^0.1.0",
-    "jquery-form-styler": "jquery.formstyler#^1.7.4"
+    "jquery-form-styler": "jquery.formstyler#^1.7.4",
+    "multicolumn-polyfill": "*"
   },
   "overrides": {
     "nouislider": {
