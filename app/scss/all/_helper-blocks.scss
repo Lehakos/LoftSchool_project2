@@ -47,6 +47,14 @@
 
         font-size: 1rem;
         vertical-align: top;
+
+        &_size_half {
+            width: 50%;
+        }
+
+        &_ta_right {
+            text-align: right;
+        }
     }
 
 }

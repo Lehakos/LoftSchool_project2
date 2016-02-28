@@ -1,0 +1,34 @@
++b.FOOTER.footer
+
+    +e.top
+
+        .container
+
+            .columns.columns_middle
+
+                .columns__col.columns__col_size_half
+
+                    +b.logo.footer__logo(href=jv0)
+                        +e.IMG.img(src='i/logo-white.svg' width=237 height=35 alt='Cooltech')
+
+                .columns__col.columns__col_size_half.columns__col_ta_right
+
+                    +socials({
+                        'fb': 'facebook.com',
+                        'vk': 'vk.com',
+                        'tw': 'tw.com'
+                    })(socials='_big-icons footer__socials')
+
+                    +e.NAV.nav
+
+                        h2.hidden-text Категории товаров
+
+                        +menu(['Планшеты', 'Мобильные телефоны', 'Мр3 плееры', 'Персональные компьютеры', 'Ноутбуки',
+                        'Аксессуары', 'Бытовая техника'])(menu='footer__menu' item='footer__menu-item')
+
+    +e.bottom
+
+        .container
+
+            +e.P.copyright All rights reserved. 2015. no copy alowed
+

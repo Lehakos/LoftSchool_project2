@@ -8,6 +8,7 @@
 
     &_blocks {
         display: flex;
+        align-items: center;
         width: 100%;
 
         .menu__item {
@@ -15,8 +16,8 @@
 
             transition: background-color .4s ease;
 
-            &:not(:last-child) {
-                margin-right: 0;
+            &:not(:first-child) {
+                margin-left: 0;
             }
 
             &:not(.menu__item_active):hover {
@@ -47,15 +48,18 @@
         }
     }
 
+    & * {
+        font-size: 16px;
+    }
+
     &__item {
         display: inline-block;
 
         font-weight: 600;
-        font-size: 16px;
         vertical-align: top;
 
-        &:not(:last-child) {
-            margin-right: 30px;
+        &:not(:first-child) {
+            margin-left: 30px;
         }
 
         &:hover {
@@ -68,6 +72,7 @@
     }
 
     &__link {
+        font-size: inherit;
         color: inherit;
 
         transition: color .4s ease;

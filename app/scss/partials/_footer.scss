@@ -1,0 +1,45 @@
+.footer {
+    color: #fff;
+
+    background: #303030 url('../i/bg-footer.jpg') center center;
+
+    &__top {
+        padding-top: 35px;
+        padding-bottom: 30px;
+    }
+
+    &__logo {
+        margin-top: -6px;
+    }
+
+    &__socials {
+        margin-bottom: 25px;
+    }
+
+    &__menu {
+        margin-left: -25px;
+    }
+
+    &__menu-item {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 36px;
+
+        &:not(:first-child) {
+            margin-left: 25px;
+        }
+    }
+
+    &__bottom {
+        border-top: 1px solid #494949;
+
+        text-align: center;
+    }
+
+    &__copyright {
+        margin: 0;
+
+        font-size: 12px;
+        line-height: 36px;
+    }
+}
